@@ -54,7 +54,7 @@ def make_top_n_tables(n):
             'WVMA: avg', 
             'WVMA: num responses', 
             'Diff Mean (SVM-WVMA)', 
-            'pval', 
+            'pval_corrected', 
             'sig']
     col_names = ['Item', 
             'Emphasis Area',
@@ -79,7 +79,7 @@ def make_top_n_tables(n):
             'WVMA: avg', 
             'WVMA: num responses', 
             'Diff Mean (SVM-WVMA)', 
-            'pval', 
+            'pval_corrected', 
             'sig']
     col_names = ['Item', 
             'Emphasis Area',
@@ -108,7 +108,7 @@ def make_top_n_tables(n):
             'generalist: avg', 
             'generalist: num responses', 
             'Diff Mean (specialist-generalist)', 
-            'pval', 
+            'pval_corrected', 
             'sig']
     col_names = ['Item', 
             'Emphasis Area',
@@ -133,7 +133,7 @@ def make_top_n_tables(n):
             'generalist: avg', 
             'generalist: num responses',
             'Diff Mean (specialist-generalist)', 
-            'pval', 
+            'pval_corrected', 
             'sig']
     col_names = ['Item', 
             'Emphasis Area',
