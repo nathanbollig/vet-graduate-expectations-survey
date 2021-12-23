@@ -30,10 +30,7 @@ def make_top_n_table(dfs, n, cols_to_keep, colnames):
     df = df.head(n)
 
     # Format columns
-    df[colnames[2]] = df[colnames[2]].apply('{:.2f}'.format)
-    df[colnames[4]] = df[colnames[4]].apply('{:.2f}'.format)
-    df[colnames[6]] = df[colnames[6]].apply('{:.2f}'.format)
-    df[colnames[7]] = df[colnames[7]].apply('{:.3e}'.format)
+    df[colnames[6]] = df[colnames[6]].apply('{:.3e}'.format)
 
     return df
 
@@ -49,20 +46,18 @@ def make_top_n_tables(n):
     dfs = get_dfs(filenames)
     cols = ['Subquestion',
             'Emphasis Area', 
-            'SVM: avg', 
+            'SVM: median (IQR)', 
             'SVM: num responses', 
-            'WVMA: avg', 
+            'WVMA: median (IQR)', 
             'WVMA: num responses', 
-            'Diff Mean (SVM-WVMA)', 
             'pval_corrected', 
             'sig']
     col_names = ['Item', 
             'Emphasis Area',
-            'SVM mean', 
+            'SVM median (IQR)', 
             'SVM responses', 
-            'WVMA mean', 
+            'WVMA median (IQR)', 
             'WVMA responses', 
-            'Mean difference', 
             'P value', 
             'sig']
     table = make_top_n_table(dfs, n, cols_to_keep=cols, colnames=col_names)
@@ -74,20 +69,18 @@ def make_top_n_tables(n):
     dfs = get_dfs(filenames)
     cols = ['Subquestion',
             'Emphasis Area', 
-            'SVM: avg', 
+            'SVM: median (IQR)', 
             'SVM: num responses', 
-            'WVMA: avg', 
+            'WVMA: median (IQR)', 
             'WVMA: num responses', 
-            'Diff Mean (SVM-WVMA)', 
             'pval_corrected', 
             'sig']
     col_names = ['Item', 
             'Emphasis Area',
-            'SVM mean', 
+            'SVM median (IQR)', 
             'SVM responses', 
-            'WVMA mean', 
+            'WVMA median (IQR)', 
             'WVMA responses', 
-            'Mean difference', 
             'P value', 
             'sig']
     table = make_top_n_table(dfs, n, cols_to_keep=cols, colnames=col_names)
@@ -103,20 +96,18 @@ def make_top_n_tables(n):
     dfs = get_dfs(filenames)
     cols = ['Subquestion',
             'Emphasis Area', 
-            'specialist: avg', 
+            'specialist: median (IQR)', 
             'specialist: num responses', 
-            'generalist: avg', 
+            'generalist: median (IQR)', 
             'generalist: num responses', 
-            'Diff Mean (specialist-generalist)', 
             'pval_corrected', 
             'sig']
     col_names = ['Item', 
             'Emphasis Area',
-            'Specialist mean', 
+            'Specialist median (IQR)', 
             'Specialist responses', 
-            'Generalist mean', 
+            'Generalist median (IQR)', 
             'Generalist responses', 
-            'Mean difference', 
             'P value', 
             'sig']
     table = make_top_n_table(dfs, n, cols_to_keep=cols, colnames=col_names)
@@ -128,20 +119,18 @@ def make_top_n_tables(n):
     dfs = get_dfs(filenames)
     cols = ['Subquestion',
             'Emphasis Area', 
-            'specialist: avg', 
+            'specialist: median (IQR)', 
             'specialist: num responses', 
-            'generalist: avg', 
+            'generalist: median (IQR)', 
             'generalist: num responses',
-            'Diff Mean (specialist-generalist)', 
             'pval_corrected', 
             'sig']
     col_names = ['Item', 
             'Emphasis Area',
-            'Specialist mean', 
+            'Specialist median (IQR)', 
             'Specialist responses', 
-            'Generalist mean', 
+            'Generalist median (IQR)', 
             'Generalist responses', 
-            'Mean difference', 
             'P value', 
             'sig']
     table = make_top_n_table(dfs, n, cols_to_keep=cols, colnames=col_names)
