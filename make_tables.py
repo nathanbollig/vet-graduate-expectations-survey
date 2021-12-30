@@ -1,3 +1,23 @@
+"""
+Execute in the same working directory as the following files:
+    companion_animal.xlsx
+    equine.xlsx
+    food_animal.xlsx
+    special_species.xlsx
+    summary_nontechnical_allspecies.xlsx
+    companion_animal_sg.xlsx
+    equine_sg.xlsx
+    food_animal_sg.xlsx
+    special_species_sg.xlsx
+    summary_sg_nontechnical_allspecies.xlsx
+
+Creates manuscript tables from this data.
+
+Accepts one command line parameter ("--top") which must be an integer.
+If negative, no filtering is applied.
+
+"""
+
 import argparse
 import pandas as pd
 
@@ -27,7 +47,8 @@ def make_top_n_table(dfs, n, cols_to_keep, colnames):
     df = df.sort_values(by=['P value'], ascending=True)
 
     # Filter to top n
-    df = df.head(n)
+    if n >  0:
+        df = df.head(n)
 
     # Format columns
     df[colnames[6]] = df[colnames[6]].apply('{:.3e}'.format)
